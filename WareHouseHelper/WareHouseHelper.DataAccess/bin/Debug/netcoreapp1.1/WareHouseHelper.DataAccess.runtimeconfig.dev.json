@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\krych\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\krych\\.nuget\\packages"
+    ]
+  }
+}

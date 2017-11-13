@@ -1,0 +1,15 @@
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.WEB.deps.json
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.WEB.runtimeconfig.json
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.WEB.runtimeconfig.dev.json
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.WEB.dll
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.WEB.pdb
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\obj\Debug\netcoreapp1.1\WareHouseHelper.WEB.csprojResolveAssemblyReference.cache
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\obj\Debug\netcoreapp1.1\WareHouseHelper.WEB.csproj.CoreCompileInputs.cache
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\obj\Debug\netcoreapp1.1\WareHouseHelper.WEB.AssemblyInfoInputs.cache
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\obj\Debug\netcoreapp1.1\WareHouseHelper.WEB.AssemblyInfo.cs
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\obj\Debug\netcoreapp1.1\WareHouseHelper.WEB.dll
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\obj\Debug\netcoreapp1.1\WareHouseHelper.WEB.pdb
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.dll
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.dll
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.pdb
+C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.pdb
