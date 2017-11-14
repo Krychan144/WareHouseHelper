@@ -38,13 +38,9 @@ namespace WareHouseHelper.DataAccess.Migrations
 
                     b.Property<int>("Quantity");
 
-                    b.Property<Guid>("ShopId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProductTypeId");
-
-                    b.HasIndex("ShopId");
 
                     b.ToTable("Products");
                 });
@@ -72,42 +68,11 @@ namespace WareHouseHelper.DataAccess.Migrations
                     b.ToTable("ProductTypes");
                 });
 
-            modelBuilder.Entity("WareHouseHelper.DataAccess.Models.Shop", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Adress")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(100)");
-
-                    b.Property<DateTime>("CreatedOn");
-
-                    b.Property<DateTime?>("DeletedOn");
-
-                    b.Property<DateTime>("ModifiedOn");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(100)");
-
-                    b.Property<decimal>("Phone")
-                        .HasColumnType("DECIMAL(11,0)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Shops");
-                });
-
             modelBuilder.Entity("WareHouseHelper.DataAccess.Models.Product", b =>
                 {
                     b.HasOne("WareHouseHelper.DataAccess.Models.ProductType", "ProductType")
                         .WithMany()
                         .HasForeignKey("ProductTypeId");
-
-                    b.HasOne("WareHouseHelper.DataAccess.Models.Shop", "Shop")
-                        .WithMany("Products")
-                        .HasForeignKey("ShopId");
                 });
         }
     }

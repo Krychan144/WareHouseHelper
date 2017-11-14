@@ -13,11 +13,10 @@ namespace WareHouseHelper.DataAccess.Repositories.Implementations
         {
         }
 
-        public IQueryable<Product> GetShopProducts()
+        public IQueryable<Product> GetProducts()
         {
             var query = from product in context.Set<Product>()
                         join productType in context.Set<ProductType>() on product.ProductType.Id equals productType.Id
-                        join shop in context.Set<Shop>() on product.Shop.Id equals shop.Id
                         where product.DeletedOn == null
                         select new Product
                         {
@@ -29,11 +28,7 @@ namespace WareHouseHelper.DataAccess.Repositories.Implementations
                                 Name = productType.Name
                             },
                             Name = product.Name,
-                            Shop = new Shop
-                            {
-                                Id = shop.Id,
-                                Name = shop.Name
-                            }
+                            Quantity = product.Quantity
                         };
 
             return !(query.Count() > 0) ? Enumerable.Empty<Product>().AsQueryable() : query;

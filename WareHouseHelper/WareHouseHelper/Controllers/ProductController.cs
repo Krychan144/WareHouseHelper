@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WareHouseHelper.BusinesLogic.Action.Product.Interfaces;
 using WareHouseHelper.BusinesLogic.Action.ProductType.Interface;
+using WareHouseHelper.BusinesLogic.Models;
+using WareHouseHelper.WEB.Models.Common;
 using WareHouseHelper.WEB.Models.Product;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WareHouseHelper.WEB.Controllers
 {
@@ -14,24 +15,54 @@ namespace WareHouseHelper.WEB.Controllers
     {
         private readonly IGetAllProducts _getAllProducts;
         private readonly IGetAllProductType _getAllProductType;
+        private readonly IAddNewProduct _addNewProduct;
+        private readonly IDeleteProduct _deleteProduct;
+        private readonly IGetProductById _getProductById;
+        private readonly IEditProduct _editProduct;
 
-        public ProductController(IGetAllProducts getAllProducts, IGetAllProductType getAllProductType)
+        public ProductController(IGetAllProducts getAllProducts,
+            IGetAllProductType getAllProductType,
+            IAddNewProduct addNewProduct, IDeleteProduct deleteProduct,
+            IGetProductById getProductById,
+            IEditProduct editProduct)
         {
             _getAllProducts = getAllProducts;
             _getAllProductType = getAllProductType;
+            _addNewProduct = addNewProduct;
+            _deleteProduct = deleteProduct;
+            _getProductById = getProductById;
+            _editProduct = editProduct;
         }
 
         [HttpGet("AddProduct")]
         public IActionResult AddProduct()
         {
             var productType = _getAllProductType.Invoke();
-            var model = new ProductToAddViewModel() { ProductTypes = new List<SelectListItem>() };
+            var model = new ProductToAddViewModel { ProductTypes = new List<SelectListItem>() };
 
             foreach (var item in productType)
             {
                 model.ProductTypes.Add(new SelectListItem { Text = item.Name, Value = item.Id.ToString() });
             }
             return View(model);
+        }
+
+        [HttpPost("AddProduct")]
+        public IActionResult AddProduct(ProductToAddViewModel model)
+        {
+            var productModel = new ProductModel
+            {
+                Name = model.ProductName,
+                Expense = model.ProductExpense,
+                Quantity = model.ProductQuantity
+            };
+
+            var addNewMealAction = _addNewProduct.Invoke(productModel, model.ProductTypeId);
+            if (addNewMealAction == Guid.Empty)
+            {
+                return RedirectToAction("AddProduct", "Product");
+            }
+            return RedirectToAction("Management", "Product");
         }
 
         [HttpGet("Management")]
@@ -50,9 +81,57 @@ namespace WareHouseHelper.WEB.Controllers
             return View(model);
         }
 
-        public IActionResult EditProduct()
+        [HttpPost("Delete")]
+        public IActionResult Delete(DeleteItemViewModel model)
         {
-            return View();
+            var deleteProductAction = _deleteProduct.Invoke(model.id);
+            if (deleteProductAction == false)
+            {
+                return RedirectToAction("Management", "Product");
+            }
+            return RedirectToAction("Management", "Product");
+        }
+
+        [HttpGet("EditProduct/{ProductId}")]
+        public IActionResult EditProduct(Guid productId)
+        {
+            var productType = _getAllProductType.Invoke();
+            var model = new ProductToEditViewModel { ProductTypes = new List<SelectListItem>() };
+
+            foreach (var item in productType)
+            {
+                model.ProductTypes.Add(new SelectListItem { Text = item.Name, Value = item.Id.ToString() });
+            }
+
+            var product = _getProductById.Invoke(productId);
+            model.ProductId = productId;
+            model.ProductExpense = product.Expense;
+            model.ProductName = product.Name;
+            model.ProductQuantity = product.Quantity;
+
+            return View(model);
+        }
+
+        [HttpPost("EditProduct/{ProductId}")]
+        public IActionResult EditProduct(Guid productId, ProductToEditViewModel model)
+        {
+            var productToEdit = new ProductModel
+            {
+                Id = model.ProductId,
+                Name = model.ProductName,
+                Expense = model.ProductExpense,
+                Quantity = model.ProductQuantity,
+                ProductType = new ProductTypeModel
+                {
+                    Id = model.ProductTypeId
+                }
+            };
+            var editProductAction = _editProduct.Invoke(productToEdit);
+            if (editProductAction == false)
+            {
+                return RedirectToAction("EditProduct", "Product", new { ProductId = productId });
+            }
+            return RedirectToAction("Management", "Product");
         }
     }
 }

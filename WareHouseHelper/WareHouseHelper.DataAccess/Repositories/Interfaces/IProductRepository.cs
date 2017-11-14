@@ -6,6 +6,6 @@ namespace WareHouseHelper.DataAccess.Repositories.Interfaces
 {
     public interface IProductRepository : IGenericRepository<Product>, IRepository
     {
-        IQueryable<Product> GetShopProducts();
+        IQueryable<Product> GetProducts();
     }
 }

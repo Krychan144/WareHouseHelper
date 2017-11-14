@@ -35,14 +35,16 @@ textarea {
         display: none;
     }
 }
+
 .backgraundMenu {
     min-height: 100%;
     padding-bottom: 60px;
-   background-image: url("../images/magazyn-696x451.jpg");
-    background-size:contain;
+    background-image: url("../images/warehouse.jpg");
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .titlename {
     font-size: 55px;
     text-align: center;
@@ -52,6 +54,7 @@ textarea {
     font-weight: bold;
     background-color: white
 }
+
 .center_side {
     background-color: white;
     min-height: 100%;

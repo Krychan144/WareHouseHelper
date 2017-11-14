@@ -1,6 +1,47 @@
 ﻿@{
     Layout = "_WebLayout";
 }
-<div class="container" style="height: 100%">
-    <h1> Edit Product</h1>
+@using System.Collections.Generic
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using WareHouseHelper.WEB.Models.Common
+@model WareHouseHelper.WEB.Models.Product.ProductToEditViewModel
+<div class="center_side">
+    <div class="titlename">Edit Product </div>
+    <div class="ui two column centered grid ">
+        <div class="column ">
+            @using (Html.BeginForm("EditProduct", "Product", FormMethod.Post, new { id = "EditMealForm", @class = "ui inverted form" }))
+            {
+                <div class="field">
+                    <div class="ui left icon input">
+                        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control", placeholder = "Name", type = "name", required = "required" })
+                        <i class="sticky note icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        @Html.TextBoxFor(m => m.ProductExpense, new { @class = "form-control", placeholder = "Expense", type = "name", required = "required" })
+                        <i class="money icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        @Html.TextBoxFor(m => m.ProductQuantity, new { @class = "form-control", placeholder = "Quantity", type = "name", required = "required" })
+                        <i class="ordered list icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        @Html.DropDownListFor(x => x.ProductTypeId, new List<SelectListItem>(Model.ProductTypes))
+                    </div>
+                </div>
+                <button id="CreateButton" class="ui positive button menubutton" type="submit">Edit</button>
+            }
+        </div>
+    </div>
 </div>
+@await Component.InvokeAsync("DeleteModal", new DeleteModalViewModel()
+{
+    Text = "Are sure? You wana edit this product?",
+    Action = "EditProduct",
+    ControllerName = ViewContext.RouteData.Values["controller"].ToString()
+})

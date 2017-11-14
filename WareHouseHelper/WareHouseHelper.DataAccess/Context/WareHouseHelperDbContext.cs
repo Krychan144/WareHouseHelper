@@ -50,7 +50,6 @@ namespace WareHouseHelper.DataAccess.Context
         #region DbSet
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<Shop> Shops { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
 
         #endregion DbSet

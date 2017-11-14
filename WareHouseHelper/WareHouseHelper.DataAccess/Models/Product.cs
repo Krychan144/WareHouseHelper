@@ -14,9 +14,6 @@ namespace WareHouseHelper.DataAccess.Models
         public decimal Expense { get; set; }
 
         [Required]
-        public Shop Shop { get; set; }
-
-        [Required]
         public ProductType ProductType { get; set; }
 
         [Required]

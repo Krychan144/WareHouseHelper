@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using WareHouseHelper.BusinesLogic.Action.Product.Interfaces;
 using WareHouseHelper.BusinesLogic.Models;
@@ -8,25 +7,29 @@ using WareHouseHelper.DataAccess.Repositories.Interfaces;
 
 namespace WareHouseHelper.BusinesLogic.Action.Product.Implementations
 {
-    public class GetAllProduct : IGetAllProducts
+    public class GetProductById : IGetProductById
     {
         private readonly IProductRepository _productRepository;
 
-        public GetAllProduct(IProductRepository productRepository)
+        public GetProductById(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
 
-        public List<ProductModel> Invoke()
+        public ProductModel Invoke(Guid Id)
         {
-            var dbOferts = _productRepository.GetProducts();
-            if (dbOferts == null)
+            if (Id == Guid.Empty)
             {
                 return null;
             }
-            var Oferts = AutoMapper.Mapper.Map<List<ProductModel>>(dbOferts);
+            var dbProduct = _productRepository.GetById(Id);
+            if (dbProduct == null)
+            {
+                return null;
+            }
+            var product = AutoMapper.Mapper.Map<ProductModel>(dbProduct);
 
-            return Oferts;
+            return product;
         }
     }
 }

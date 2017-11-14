@@ -18,9 +18,6 @@ namespace WareHouseHelper.BusinesLogic.Configuration.Implementations
                 config.CreateMap<ProductModel, Product>().MaxDepth(1);
                 config.CreateMap<Product, ProductModel>().MaxDepth(1);
 
-                config.CreateMap<ShopModel, Shop>().MaxDepth(1);
-                config.CreateMap<Shop, ShopModel>().MaxDepth(1);
-
                 config.CreateMap<ProductTypeModel, ProductType>().MaxDepth(1);
                 config.CreateMap<ProductType, ProductTypeModel>().MaxDepth(1);
 

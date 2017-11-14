@@ -10,7 +10,6 @@ namespace WareHouseHelper.BusinesLogic.Models
 
         public decimal Expense { get; set; }
 
-        public ShopModel Shop { get; set; }
         public ProductTypeModel ProductType { get; set; }
         public int Quantity { get; set; }
     }

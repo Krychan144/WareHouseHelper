@@ -24,23 +24,6 @@ namespace WareHouseHelper.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Shops",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    Adress = table.Column<string>(type: "NVARCHAR(100)", nullable: false),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true),
-                    ModifiedOn = table.Column<DateTime>(nullable: false),
-                    Name = table.Column<string>(type: "NVARCHAR(100)", nullable: false),
-                    Phone = table.Column<decimal>(type: "DECIMAL(11,0)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Shops", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
@@ -51,8 +34,7 @@ namespace WareHouseHelper.DataAccess.Migrations
                     ModifiedOn = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(type: "NVARCHAR(100)", nullable: false),
                     ProductTypeId = table.Column<Guid>(nullable: false),
-                    Quantity = table.Column<int>(nullable: false),
-                    ShopId = table.Column<Guid>(nullable: false)
+                    Quantity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,23 +45,12 @@ namespace WareHouseHelper.DataAccess.Migrations
                         principalTable: "ProductTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Products_Shops_ShopId",
-                        column: x => x.ShopId,
-                        principalTable: "Shops",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_ProductTypeId",
                 table: "Products",
                 column: "ProductTypeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_ShopId",
-                table: "Products",
-                column: "ShopId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductTypes_Name",
@@ -95,9 +66,6 @@ namespace WareHouseHelper.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "ProductTypes");
-
-            migrationBuilder.DropTable(
-                name: "Shops");
         }
     }
 }
