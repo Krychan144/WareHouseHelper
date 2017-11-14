@@ -32,6 +32,7 @@ namespace WareHouseHelper.WEB
             services.AddEntityFramework().AddDbContext<WareHouseHelper.DataAccess.Context.WareHouseHelperDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Database")));
             services.AddSession();
             RegisterDependecy.Register(services);
+            AutoMapperBulider.Build();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

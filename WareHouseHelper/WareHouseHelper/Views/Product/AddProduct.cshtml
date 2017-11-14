@@ -1,45 +1,40 @@
 ﻿@{
     Layout = "_WebLayout";
 }
-@using System
 @using System.Collections.Generic
 @using Microsoft.AspNetCore.Mvc.Rendering
-
+@model  WareHouseHelper.WEB.Models.Product.ProductToAddViewModel
 <div class="center_side">
-    <div class="titlename">Create new Order </div>
+    <div class="titlename">Add new Product </div>
     <div class="ui two column centered grid ">
         <div class="column ">
-            @using (Html.BeginForm(FormMethod.Post, false, new { id = "createOrderForm", @class = "ui form center aligned" }))
+            @using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { id = "AddNewProductForm", @class = "ui form center aligned" }))
             {
-                <div class="field " style="left: 40%;">
-                    <div class="your-clock"></div>
-                </div>
                 <div class="field">
                     <div class="ui left icon input">
-                        @Html.TextBoxFor(m => m.OrderName, new { @class = "form-control", placeholder = "Name", type = "name", required = "required" })
+                        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control", placeholder = "Name", type = "name", required = "required" })
                         <i class="sticky note icon"></i>
                     </div>
                 </div>
-                <div class="field ">
-                    @Html.DropDownListFor(x => x.PubId, new List<SelectListItem>(Model.Pubs))
-                </div>
-                <div class="field ">
-                    <div class="ui calendar">
-                        <div class="ui input left icon">
-                            <i class="calendar icon"></i>
-                            @Html.TextBoxFor(m => m.EndOrders, new { type = "text", placeholder = "Date/Time" })
-                        </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        @Html.TextBoxFor(m => m.ProductExpense, new { @class = "form-control", placeholder = "Expense", type = "name", required = "required" })
+                        <i class="money icon"></i>
                     </div>
                 </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        @Html.TextBoxFor(m => m.ProductQuantity, new { @class = "form-control", placeholder = "Quantity", type = "name", required = "required" })
+                        <i class="ordered list icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        @Html.DropDownListFor(x => x.ProductTypeId, new List<SelectListItem>(Model.ProductTypes))
+                    </div>
+                </div>
+                <button id="CreateButton" class="ui positive button menubutton" tabindex="0" type="submit">Create</button>
             }
         </div>
-        <div class=" column centered row">
-            <div class="ui buttons">
-                <a ><button class="ui button">Cancel</button></a>
-                <div class="or"></div>
-                <button id="CreateButton" class="ui positive button" form="createOrderForm" type="submit">Create</button>
-            </div>
-        </div>
-
     </div>
 </div>

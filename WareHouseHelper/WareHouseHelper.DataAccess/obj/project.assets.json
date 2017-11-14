@@ -8132,11 +8132,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper.DataAccess\\WareHouseHelper.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.DataAccess\\WareHouseHelper.DataAccess.csproj",
       "projectName": "WareHouseHelper.DataAccess",
-      "projectPath": "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper.DataAccess\\WareHouseHelper.DataAccess.csproj",
+      "projectPath": "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.DataAccess\\WareHouseHelper.DataAccess.csproj",
       "packagesPath": "C:\\Users\\krych\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper.DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\krych\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9,3 +9,14 @@ C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.BusinesLogic\bin\Deb
 C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.BusinesLogic\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.pdb
 C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.dll
 C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.pdb
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\bin\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.deps.json
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\bin\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.dll
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\bin\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.pdb
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.dll
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.pdb
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.csprojResolveAssemblyReference.cache
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.csproj.CoreCompileInputs.cache
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.AssemblyInfoInputs.cache
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.AssemblyInfo.cs
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.dll
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.BusinesLogic\obj\Debug\netcoreapp1.1\WareHouseHelper.BusinesLogic.pdb

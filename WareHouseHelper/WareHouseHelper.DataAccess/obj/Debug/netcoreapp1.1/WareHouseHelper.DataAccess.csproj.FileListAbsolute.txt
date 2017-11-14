@@ -9,3 +9,14 @@ C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug
 C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.DataAccess\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.runtimeconfig.json
 C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.DataAccess\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.runtimeconfig.dev.json
 C:\Users\krych\source\repos\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.deps.json
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.runtimeconfig.json
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.runtimeconfig.dev.json
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.dll
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\bin\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.pdb
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.AssemblyInfoInputs.cache
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.AssemblyInfo.cs
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.dll
+C:\Users\krych\Desktop\WareHouseHelper\WareHouseHelper\WareHouseHelper.DataAccess\obj\Debug\netcoreapp1.1\WareHouseHelper.DataAccess.pdb

@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "_webLayout";
 }
+@using Microsoft.AspNetCore.Mvc.Rendering
+@model  List<WareHouseHelper.WEB.Models.Product.ProductInWareHouseViewModel>
+<div class="center_side">
+    <div class="titlename">Product in Warehouse</div>
+
+    <div class="column row">
+        <div id="MealInPubOferts" style="padding-left: 50px; padding-right: 50px; ">
+            <div id="OfertsMealList">
+                <table class="ui single line table" id="OfertsMealTableRow">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Expense</th>
+                            <th>Type</th>
+                            <th>Quantity</th>
+
+                            <th class="four wide">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="OfertsMealTable">
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(m => item.ProductName)</td>
+                                <td>@Html.DisplayFor(m => item.ProductExpense) zł</td>
+                                <td>@Html.DisplayFor(m => item.ProductTypeName) </td>
+                                <td>@Html.DisplayFor(m => item.ProductQuantity) </td>
+                                <td>
+                                    <a><button class="deleteItem ui grey button" data-id="@item.ProductId"><i class="remove icon"> </i>Remove</button></a>
+                                    <a href="@Url.Action("EditProduct", "Product", new { item.ProductId })"><><button class="ui grey button" data-id="item.MealId"><i class="edit icon"> </i>Edit</button></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

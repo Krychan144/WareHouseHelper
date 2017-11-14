@@ -11134,11 +11134,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.WEB.csproj",
+      "projectUniqueName": "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.WEB.csproj",
       "projectName": "WareHouseHelper.WEB",
-      "projectPath": "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.WEB.csproj",
+      "projectPath": "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.WEB.csproj",
       "packagesPath": "C:\\Users\\krych\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper\\obj\\",
+      "outputPath": "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\krych\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11155,8 +11155,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper.BusinesLogic\\WareHouseHelper.BusinesLogic.csproj": {
-              "projectPath": "C:\\Users\\krych\\source\\repos\\WareHouseHelper\\WareHouseHelper.BusinesLogic\\WareHouseHelper.BusinesLogic.csproj"
+            "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.BusinesLogic\\WareHouseHelper.BusinesLogic.csproj": {
+              "projectPath": "C:\\Users\\krych\\Desktop\\WareHouseHelper\\WareHouseHelper\\WareHouseHelper.BusinesLogic\\WareHouseHelper.BusinesLogic.csproj"
             }
           }
         }

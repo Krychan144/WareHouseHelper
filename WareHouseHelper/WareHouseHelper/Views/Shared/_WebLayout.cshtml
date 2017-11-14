@@ -4,7 +4,7 @@
 }
 
 @section CSS
-{
+    {
     <environment names="Development">
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
@@ -14,44 +14,35 @@
 }
 
 @section Pre_Body
-{
+    {
     <div class="ui secondary pointing menu">
-        <a class="ui logo icon image" href="/">
+        <a class="ui logo icon image" href="@Url.Action("Index", "Home")">
             <img class="logo" src="~/images/18404.png" alt="Logo" />
         </a>
         <a class="item" href="@Url.Action("Index", "Home")"> <h1>WareHouse</h1> </a>
-        <a class="active item">
-            Home
-        </a>
-
-        <a class="item">
-            Quantity
-        </a>
-        <a class="item">
-            Add Product
-        </a>
+        <a class="active item" href="@Url.Action("Index", "Home")">Home </a>
+        <a class="item" href="@Url.Action("Management", "Product")">Quantity</a>
+        <a class="item" href="@Url.Action("AddProduct", "Product")">Add Product</a>
         <div class="right menu">
-            <a class="item"> Add Product Type to Base </a>
+            <a class="item" href="@Url.Action("AddProductType", "Type")"> Add Product Type to Base </a>
         </div>
     </div>
     <div class="ui segment">
         <p></p>
     </div>
     <div class="body-content">
-
     </div>
 
 }
 
 @section Post_Body
-{
+    {
     <div class="ui inverted vertical footer segment ">
         <div class="container">
             <ul>
                 <li>
                     WareHouse created by Krystian Podgórski, 2017
                 </li>
-               
             </ul>
         </div>
     </div>
@@ -59,7 +50,7 @@
 }
 
 @section Scripts
-{
+    {
     <environment names="Development">
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
