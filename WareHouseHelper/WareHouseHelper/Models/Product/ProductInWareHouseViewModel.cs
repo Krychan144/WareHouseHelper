@@ -15,5 +15,7 @@ namespace WareHouseHelper.WEB.Models.Product
         public Guid ProductTypeId { get; set; }
 
         public string ProductTypeName { get; set; }
+
+        public ProductNameToFindViewModel ProductToFind { get; set; }
     }
 }

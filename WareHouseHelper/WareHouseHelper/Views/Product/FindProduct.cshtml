@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "_webLayout";
+}
+@using System.Linq
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using WareHouseHelper.WEB.Models.Common
+@model  List<WareHouseHelper.WEB.Models.Product.ProductInWareHouseViewModel>
+<div class="center_side">
+    <div class="titlename">Product in Warehouse</div>
+    <div class="ui two column centered grid"> 
+    <div class=" four wide column" style="padding-bottom: 50px;">
+        @using (Html.BeginForm("FindProduct", "Product", FormMethod.Post, new { id = "FindForm", @class = "ui inverted form" }))
+        {
+            <div class="field">
+                <div class="ui left icon input">
+                    @Html.TextBoxFor(m => m.FirstOrDefault().ProductToFind.ProductName, new { @class = "form-control", placeholder = "Name", type = "name" })
+                    <i class="sticky note icon"></i>
+                </div>
+            </div>
+        <button id="CreateButton" class="ui left floated button" type="submit">Find</button>      
+        }
+    </div>
+</div>
+    <div class="column row">
+        <div style="padding-left: 50px; padding-right: 50px; ">
+            <div>
+                <table class="ui single line table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Expense</th>
+                            <th>Type</th>
+                            <th>Quantity</th>
+
+                            <th class="four wide">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(m => item.ProductName)</td>
+                                <td>@Html.DisplayFor(m => item.ProductExpense) zł</td>
+                                <td>@Html.DisplayFor(m => item.ProductTypeName) </td>
+                                <td>@Html.DisplayFor(m => item.ProductQuantity) </td>
+                                <td>
+                                    <a><button class="deleteItem ui grey button" data-id="@item.ProductId"><i class="remove icon"> </i>Remove</button></a>
+                                    <a href="@Url.Action("EditProduct", "Product", new { item.ProductId })"><button class="ui grey button" data-id="item.MealId"><i class="edit icon"> </i>Edit</button></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("DeleteModal", new DeleteModalViewModel()
+{
+    Text = "Are sure? You wana delete this product?",
+    Action = "Delete",
+    ControllerName = ViewContext.RouteData.Values["controller"].ToString()
+})

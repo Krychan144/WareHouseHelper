@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WareHouseHelper.BusinesLogic.Action.Product.Interfaces;
@@ -132,6 +133,63 @@ namespace WareHouseHelper.WEB.Controllers
                 return RedirectToAction("EditProduct", "Product", new { ProductId = productId });
             }
             return RedirectToAction("Management", "Product");
+        }
+
+        [HttpGet("FindProduct")]
+        public IActionResult FindProduct()
+        {
+            var productInWareHouse = _getAllProducts.Invoke();
+            var model = productInWareHouse.Select(item => new ProductInWareHouseViewModel
+            {
+                ProductId = item.Id,
+                ProductTypeName = item.ProductType.Name,
+                ProductExpense = item.Expense,
+                ProductQuantity = item.Quantity,
+                ProductTypeId = item.ProductType.Id,
+                ProductName = item.Name
+            }).ToList();
+            return View(model);
+        }
+
+        [HttpPost("FindProduct")]
+        public IActionResult FindProduct(ProductInWareHouseViewModel NameModel)
+        {
+            var name = NameModel.ProductToFind.ProductName;
+            var productInWareHouse = _getAllProducts.Invoke();
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                var model = new List<ProductInWareHouseViewModel>();
+                foreach (var item in productInWareHouse)
+                {
+                    if (item.Name.ToLower().Contains(name))
+                    {
+                        model.Add(new ProductInWareHouseViewModel
+                        {
+                            ProductName = item.Name,
+                            ProductExpense = item.Expense,
+                            ProductQuantity = item.Quantity,
+                            ProductTypeName = item.ProductType.Name
+                        });
+                    }
+                }
+
+                return View(model);
+            }
+            else
+            {
+                var model = productInWareHouse.Select(item => new ProductInWareHouseViewModel
+                {
+                    ProductId = item.Id,
+                    ProductTypeName = item.ProductType.Name,
+                    ProductExpense = item.Expense,
+                    ProductQuantity = item.Quantity,
+                    ProductTypeId = item.ProductType.Id,
+                    ProductName = item.Name
+                }).ToList();
+
+                return View(model);
+            }
         }
     }
 }
